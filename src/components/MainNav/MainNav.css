@@ -228,18 +228,18 @@ Screen style's
     width: 300px;
     left: auto;
     padding: 10px 20px;
-    text-align: center;
+    text-align: left;
+
 }
 
 .menu > ul > li > ul.normal-sub > li {
     width: 100%;
-    text-align: center;
 }
 
 .menu > ul > li > ul.normal-sub > li a {
     border: 0;
     padding: 1em 0;
-    text-align: center;
+    font-size: 1.3em;
 }
 .menu .menu-blank {
   width: 15%;
@@ -253,7 +253,7 @@ Screen style's
   }
   .menu > ul > li > ul > li a {
       color: #96632E;
-      font-size: 1em;
+      font-size: 1.1em;
       padding: .1em 0;
       width: 95%;
       display: block;
@@ -349,6 +349,7 @@ Mobile style's
     }
     .menu > ul > li > ul.normal-sub {
         width: 100%;
+
     }
     .menu > ul > li > ul > li {
         float: none;

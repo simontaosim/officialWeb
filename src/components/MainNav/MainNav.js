@@ -31,7 +31,7 @@ class MainNav extends React.Component {
     $(".menu > ul > li").hover(function (e) {
       if ($(this).attr("class") !== "menu-logo") {
         $(this).find('a:first').css("color","#43341B");
-        $(this).find('a:first').css("border-bottom","4px solid #828282");
+        $(this).find('a:first').css("border-bottom","2px solid #828282");
       }
 
         if ($(window).width() > 943) {
@@ -67,7 +67,25 @@ class MainNav extends React.Component {
         e.preventDefault();
     });
     //when clicked on mobile-menu, normal menu is shown as a list, classic rwd menu story (thanks mwl from stackoverflow)
+    $("#brandExpress").show();
+    $("#brandIdea").hide();
+    $("#shoresIntro").hide();
+  }
+  showBrandExpress(){
+    $("#brandExpress").show();
+    $("#brandIdea").hide();
+    $("#shoresIntro").hide();
+  }
 
+  showBrandIdea(){
+    $("#brandExpress").hide();
+    $("#brandIdea").show();
+    $("#shoresIntro").hide();
+  }
+  showShoresIntro(){
+    $("#brandExpress").hide();
+    $("#brandIdea").hide();
+    $("#shoresIntro").show();
   }
 
 
@@ -79,54 +97,73 @@ class MainNav extends React.Component {
 
             <div className="menu">
                 <ul>
-                    <li><a href="#">新闻动态</a></li>
-                    <li><a href="#">黄金首饰</a>
-                        <ul>
-                            <li><a>类别</a>
-                                <ul>
-                                    <li><a href="#">耳钉</a></li>
-                                    <li><a href="#">黄金项链</a></li>
-                                    <li><a href="#">投资黄金</a></li>
-                                    <li><a href="#">婚嫁套件</a></li>
-                                    <li><a href="#">转运珠</a></li>
-                                    <li><a href="#">黄金对戒</a></li>
-                                    <li><a href="#">足金饰品</a></li>
-                                    <li><a href="#">K金饰品</a></li>
-                                </ul>
-                            </li>
-                            <li><a>系列</a>
-                                <ul>
-                                    <li><a href="#">耳钉</a></li>
-                                    <li><a href="#">黄金项链</a></li>
-                                    <li><a href="#">投资黄金</a></li>
-                                    <li><a href="#">婚嫁套件</a></li>
-                                    <li><a href="#">转运珠</a></li>
-                                    <li><a href="#">黄金对戒</a></li>
-                                    <li><a href="#">足金饰品</a></li>
-                                    <li><a href="#">K金饰品</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li><a href="#">钻石财宝</a>
+                    <li><a href="#">KLD NOW</a></li>
+                    <li><a href="#">金莱蒂世界</a>
                         <ul>
                             <li>
                               <ul>
-                                <li><a href="#">结婚钻戒</a></li>
-                                <li><a href="#">钻石耳饰</a></li>
-                                <li><a href="#">钻石吊坠</a></li>
-                                <li><a href="#">钻石手链</a></li>
-                                <li><a href="#">裸钻定制</a></li>
-                                <li><a href="#">红蓝宝石</a></li>
-                                <li><a href="#">绿宝石</a></li>
-                                <li><a href="#">坦桑石</a></li>
-                                <li><a href="#">其他天然宝石</a></li>
+                                <li onMouseOver={this.showBrandExpress.bind(this)}><a href="#">品牌历程</a></li>
+                                <li onMouseOver={this.showBrandIdea.bind(this)}><a href="#">品牌理念</a></li>
+                                <li onMouseOver={this.showShoresIntro.bind(this)}><a href="#">专卖店</a></li>
+
+                              </ul>
+                            </li>
+                            <li  id="brandExpress" style={{position:"relative", top: "20px", width: "33%"}}>
+                              <div  style={{float:"left", padding: "10px"}}>
+                                  <h2>品牌历程</h2>
+                                  <hr/>
+                                  <p>罗里吧嗦，balala</p>
+                              </div>
+
+                              <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                            </li>
+                            <li  id="brandIdea" style={{position:"relative", top: "20px", width: "33%"}}>
+                              <div  style={{float:"left", padding: "10px"}}>
+                                  <h2>品牌理念</h2>
+                                  <hr/>
+                                  <p>罗里吧嗦，balala</p>
+                              </div>
+
+                              <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                            </li>
+                            <li  id="shoresIntro" style={{position:"relative", top: "20px", width: "33%"}}>
+                              <div  style={{float:"left", padding: "10px"}}>
+                                  <h2>专卖店</h2>
+                                  <hr/>
+                                  <p>罗里吧嗦，balala</p>
+                              </div>
+
+                              <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+                    <li><a href="#">联系我们</a>
+                        <ul>
+                            <li>
+                              <ul>
+                                <h3>Number</h3>
+                                <p>12342134123421</p>
                               </ul>
                             </li>
                             <li>
                               <ul>
-                                <h2>这是展示</h2>
+                                <h3>邮箱</h3>
+                                <p>12342134123421</p>
+                              </ul>
+                            </li>
+                            <li>
+                              <ul>
+                                <h3>HR</h3>
+                                <p>hr@xxxx.com</p>
+                              </ul>
+                            </li>
+                            <li>
+                              <ul>
+                                <h3>地址</h3>
+                                <p>12342134123421</p>
                               </ul>
                             </li>
                         </ul>
@@ -136,35 +173,61 @@ class MainNav extends React.Component {
                       <img src="/images/logo.jpg" style={{width:"130px", position: "relative", top: "-41px"}} />
                     </a>
                     </li>
-                    <li><a href="#">珍珠玉翠</a>
+                    <li><a href="#">婚尚臻品</a>
                         <ul>
                             <li>
                                 <ul>
-                                    <li><a href="#">珍珠项链</a></li>
-                                    <li><a href="#">海水珍珠</a></li>
-                                    <li><a href="#">和田玉</a></li>
-                                    <li><a href="#">翡翠摆件</a></li>
-                                    <li><a href="#">翡翠手镯</a></li>
-                                    <li><a href="#">翡翠项链</a></li>
-                                    <li><a href="#">琥珀手链</a></li>
-                                    <li><a href="#">天然琥珀</a></li>
-                                    <li><a href="#">原矿琥珀</a></li>
+                                    <li><a href="#">婚嫁珠宝</a></li>
+                                    <li><a href="#">戒指</a></li>
+                                    <li><a href="#">定制</a></li>
+
                                 </ul>
                             </li>
+                            <li style={{position:"relative", top: "20px", width: "33%"}}>
+                              <div  style={{float:"left", padding: "10px"}}>
+                                  <h2>婚嫁珠宝</h2>
+                                  <hr/>
+                                  <p>罗里吧嗦，balala</p>
+                              </div>
 
-                            <li><a href="#">Empty sub</a></li>
+                              <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                            </li>
+                            <li style={{position:"relative", top: "20px", width: "33%"}}>
+                              <div  style={{float:"left", padding: "10px"}}>
+                                  <h2>定制</h2>
+                                  <hr/>
+                                  <p>罗里吧嗦，balala</p>
+                              </div>
+
+                              <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                            </li>
                         </ul>
                     </li>
-                      <li><a href="#">专题</a></li>
-                      <li><a href="#">专卖店</a></li>
-                      <Media query="(max-width: 959px)">
-                        {matches => matches ? (
-                            <li><a href="#">心愿单</a></li>
+                      <li><a href="#">臻美宝石</a>
+                        <ul>
+                          <li>
+                              <ul>
+                                  <li><a href="#">珍珠</a></li>
+                                  <li><a href="#">水晶</a></li>
+                                  <li><a href="#">彩色宝石</a></li>
 
-                        ) : (
-                            <div></div>
-                        )}
-                      </Media>
+                              </ul>
+                           </li>
+
+                             <li style={{position:"relative", top: "20px", width: "50%"}}>
+                               <div  style={{float:"left", padding: "20px"}}>
+                                   <h2>珍珠</h2>
+                                   <hr/>
+                                   <p>快看，暴大的珍珠</p>
+                               </div>
+
+                               <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                             </li>
+
+                          </ul>
+                      </li>
+                      <li><a href="#">优惠信息</a></li>
+
                       <Media query="(max-width: 959px)">
                         {matches => matches ? (
                             <li><a href="#">搜索</a></li>
