@@ -1,0 +1,373 @@
+/*
+- Name: megamenu.js - style.css
+- Version: 1.0
+- Latest update: 29.01.2016.
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+Body - not related to megamenu
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/*.description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}*/
+
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+megamenu.js STYLE STARTS HERE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+Screen style's
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.menu-container {
+    width: 90%;
+    margin: 0 auto;
+    background: #FFFFFB;
+    box-sizing: border-box;
+    height: 64px;
+}
+
+.main-nav{
+  position: fixed;
+  width: 100%;
+}
+
+.menu-logo{
+  position: relative;
+  display: inline-block;
+  text-align: center !important;
+}
+
+.menu-mobile {
+    display: none;
+    padding: 20px;
+}
+
+.menu-mobile:after {
+    content: "\f394";
+    font-family: "Ionicons";
+    font-size: 2.5rem;
+    padding: 0;
+    float: right;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-25%);
+    -ms-transform: translateY(-25%);
+    transform: translateY(-25%);
+}
+
+.menu-dropdown-icon:before {
+    content: "\f489";
+    font-family: "Ionicons";
+    display: none;
+    cursor: pointer;
+    float: right;
+    padding: 1.5em 2.1em;
+    background: #FFFFFB;
+    color: #96632E;
+}
+
+.menu > ul {
+    margin: 0 auto;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    /* IF .menu position=relative -> ul = container width, ELSE ul = 100% width */
+    box-sizing: border-box;
+}
+
+.menu > ul:before,
+.menu > ul:after {
+    content: "";
+    display: table;
+}
+
+.menu > ul:after {
+    clear: both;
+}
+
+.menu > ul > li {
+    float: left;
+    background: #FFFFFB;
+    padding: 0;
+    margin: 0;
+    width: 14%;
+    text-align: center;
+}
+
+.menu > ul > li a {
+    text-decoration: none;
+    padding: 1em 1.5em;
+    display: block;
+      color: #96632E;
+    font-size: 1.3em;
+    font-family: 'LouisVuitton-N',Asian,sans-serif;
+}
+
+.menu > ul > li:hover {
+    background: #FFFFFB;
+}
+
+.menu > ul > li > ul {
+    display: none;
+    width: 100%;
+    background: #FFFFFB;
+    padding: 20px;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.menu > ul > li > ul:before,
+.menu > ul > li > ul:after {
+    content: "";
+    display: table;
+}
+
+.menu > ul > li > ul:after {
+    clear: both;
+}
+
+.menu > ul > li > ul > li {
+    margin: 0;
+    padding-bottom: 0;
+    list-style: none;
+    width: 25%;
+    background: #FFFFFB;
+    float: left;
+    text-align: center;
+}
+.menu > ul > li > ul  li:first-child ul  {
+    width: 45%;
+    background: #FFFFFB;
+    text-align: center;
+}
+.menu > ul > li > ul  li:first-child ul > li  {
+    text-align: center !important;
+    position: relative;
+    left: 55.5%;
+}
+
+.menu > ul > li > ul  li:first-child ul li a{
+    background: #FFFFFB;
+    position: relative;
+    left: 3px;
+    text-align: center;
+}
+.menu > ul > li > ul  li:first-child ul li a:hover{
+    background: #FFFFFF;
+    color:#43341B;
+    text-align: center;
+}
+
+
+.menu > ul > li > ul > li a {
+    color: #96632E;
+    font-size: 1.2em;
+    padding: .2em 0;
+    width: 95%;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.menu > ul > li > ul > li > ul {
+    display: block;
+    padding: 0;
+    margin: 10px 0 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.menu > ul > li > ul > li > ul:before,
+.menu > ul > li > ul > li > ul:after {
+    content: "";
+    display: table;
+}
+
+.menu > ul > li > ul > li > ul:after {
+    clear: both;
+    text-align: center;
+}
+
+.menu > ul > li > ul > li > ul > li {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.menu > ul > li > ul > li > ul > li a {
+    border: 0;
+    text-align: center;
+}
+
+.menu > ul > li > ul.normal-sub {
+    width: 300px;
+    left: auto;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.menu > ul > li > ul.normal-sub > li {
+    width: 100%;
+    text-align: center;
+}
+
+.menu > ul > li > ul.normal-sub > li a {
+    border: 0;
+    padding: 1em 0;
+    text-align: center;
+}
+.menu .menu-blank {
+  width: 15%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1234px) {
+  .menu .menu-blank {
+    width: 5%;
+    text-align: center;
+  }
+  .menu > ul > li > ul > li a {
+      color: #96632E;
+      font-size: 1em;
+      padding: .1em 0;
+      width: 95%;
+      display: block;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+  }
+}
+
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+Mobile style's
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media only screen and (max-width: 959px) {
+  .main-nav{
+    position: relative;;
+    width: 100%;
+  }
+    .menu-container {
+        width: 100%;
+        padding-left: 0%;
+        border-bottom: 1px solid #828282;
+        height: 54px;
+    }
+    .menu > ul > li {
+        background: #FFFFFB;
+    }
+    .menu > ul > li > a {
+        color: #96632E !important;
+    }
+    .menu > ul > li:hover {
+        background:#FFFFFB;
+    }
+
+    .menu > ul > li > ul  li:first-child ul  {
+        padding: none;
+        width: none;
+        background: #FFFFFB;
+    }
+
+    .menu > ul > li > ul  li:first-child ul li a{
+        background: #FFFFFB;
+        position: relative;
+        left: 3px;
+        text-align: center;
+    }
+    .menu > ul > li > ul  li:first-child ul > li  {
+        text-align: center !important;
+        position: relative;
+        left: 55.5%;
+    }
+    .menu-logo{
+      position: relative;
+      display: none !important;
+      text-align: center !important;
+    }
+    .menu{
+      margin-left: 0%;
+    }
+    .menu-mobile {
+        display: block;
+        color: #96632E;
+        height: auto;
+        position: fixed;
+        z-index: 10000;
+        right: 10px;
+        top: -10px;
+    }
+    .menu-dropdown-icon:before {
+        display: block;
+        color: #96632E;
+        font-size: 1em;
+    }
+    .menu > ul {
+        display: none;
+
+    }
+    .menu > ul > li {
+        width: 100%;
+        float: none;
+        display: block;
+        border-bottom: 1px solid #828282;
+    }
+    .menu > ul > li a {
+        padding: 1.5em;
+        width: 100%;
+        display: block;
+        color: #96632E;
+    }
+    .menu > ul > li > ul {
+        position: relative;
+
+    }
+    .menu > ul > li > ul.normal-sub {
+        width: 100%;
+    }
+    .menu > ul > li > ul > li {
+        float: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .menu > ul > li > ul > li:first-child {
+        margin: 0;
+    }
+    .menu > ul > li > ul > li > ul {
+        position: relative;
+    }
+    .menu > ul > li > ul > li > ul > li {
+        float: none;
+    }
+    .menu .show-on-mobile {
+        display: block;
+    }
+    .menu .menu-blank {
+      display: none;
+    }
+}
