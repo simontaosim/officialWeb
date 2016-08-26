@@ -117,6 +117,8 @@ class MainNav extends React.Component {
 
                               <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
                             </li>
+
+
                             <li  id="brandIdea" style={{position:"relative", top: "20px", width: "33%"}}>
                               <div  style={{float:"left", padding: "10px"}}>
                                   <h2>品牌理念</h2>
