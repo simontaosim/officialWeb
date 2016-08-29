@@ -23,6 +23,7 @@
     "react-fullpage": "^0.1.1",
     "react-media": "^1.2.1",
     "react-router": "^2.0.1",
+    "react-slick": "^0.13.3",
     "slidePage": "^2.0.0"
   },
   "devDependencies": {
