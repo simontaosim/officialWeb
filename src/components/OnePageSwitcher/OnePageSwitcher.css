@@ -1,4 +1,4 @@
-html,body,div{
+html,body{
     height:100%;
 }
 
@@ -6,4 +6,17 @@ html,body,div{
 .ant-carousel-vertical .slick-dots{
 	right: 10px !important;
 	top: 41% !important;
+}
+.slick-list{
+  height: 100% !important;
+}
+.slick-track{
+    height: 100% !important;
+}
+.slick-slider{
+  height: 100% !important;
+}
+.ant-carousel.ant-carousel-vertical{
+    height: 100.1% !important;
+
 }

@@ -36,7 +36,7 @@ Screen style's
 .menu-container {
     width: 95%;
     margin: 0 auto;
-    background: #FFFFFF;
+    background: rgba(255,255,255,0.9);
     box-sizing: border-box;
     height: 64px;
 }
@@ -77,7 +77,7 @@ Screen style's
     cursor: pointer;
     float: right;
     padding: 1.5em 2.1em;
-    background: #FFFFFF;
+    background: rgba(255,255,255,0.9);
     color: #96632E;
 }
 
@@ -103,7 +103,7 @@ Screen style's
 
 .menu > ul > li {
     float: left;
-    background: #FFFFFF;
+    background: rgba(255,255,255,0);
     padding: 0;
     margin: 0;
     width: 14%;
@@ -120,15 +120,16 @@ Screen style's
 }
 
 .menu > ul > li:hover {
-    background: #FFFFFF;
+    background: rgba(255,255,255,0);
 }
 
 .menu > ul > li > ul {
     display: none;
     width: 100%;
-    background: #FFFFFF;
+    background: rgba(255,255,255,0.8);
     padding: 20px;
     position: absolute;
+    top:66px;
     z-index: 99;
     left: 0;
     margin: 0;
@@ -152,13 +153,13 @@ Screen style's
     padding-bottom: 0;
     list-style: none;
     width: 25%;
-    background: #FFFFFF;
+    background: rgba(255,255,255,0);
     float: left;
     text-align: center;
 }
 .menu > ul > li > ul  li:first-child ul  {
     width: 45%;
-    background: #FFFFFF;
+    background: rgba(255,255,255,0);
     text-align: center;
 }
 .menu > ul > li > ul  li:first-child ul > li  {
@@ -168,14 +169,14 @@ Screen style's
 }
 
 .menu > ul > li > ul  li:first-child ul li a{
-    background: #FFFFFF;
+    background: rgba(255,255,255,0);
     position: relative;
     left: 3px;
     text-align: center;
 }
 .menu > ul > li > ul  li:first-child ul li a:hover{
-    background: #FFFFFF;
-    color:#43341B;
+    background: rgba(255,255,255,0.8);
+    color:#43341B !important;
     text-align: center;
 }
 
@@ -271,44 +272,55 @@ Mobile style's
   .main-nav{
     position: relative;;
     width: 100%;
+    background: white;
   }
     .menu-container {
         width: 100%;
         padding-left: 0%;
         border-bottom: 1px solid #828282;
         height: 54px;
+        z-index: 200000;
     }
     .menu > ul > li {
-        background: #FFFFFF;
+        background: rgba(255,255,255,0.8);
+        z-index: 200000;
     }
     .menu > ul > li > a {
         color: #96632E !important;
     }
     .menu > ul > li:hover {
-        background:#FFFFFF;
+        background:rgba(255,255,255,0.8);
+        z-index: 200000;
+    }
+    .menu > ul > li > ul {
+      top: auto;
     }
 
     .menu > ul > li > ul  li:first-child ul  {
         padding: none;
         width: none;
-        background: #FFFFFF;
+        background: rgba(255,255,255,0.8);
+        z-index: 200000;
     }
 
     .menu > ul > li > ul  li:first-child ul li a{
-        background: #FFFFFF;
+        background: rgba(255,255,255,0.8);
         position: relative;
         left: 3px;
         text-align: center;
+        z-index: 200000;
     }
     .menu > ul > li > ul  li:first-child ul > li  {
         text-align: center !important;
         position: relative;
         left: 55.5%;
+        z-index: 200000;
     }
     .menu-logo{
       position: relative;
       display: none !important;
       text-align: center !important;
+      z-index: 200000;
     }
     .menu{
       margin-left: 0%;
@@ -321,6 +333,7 @@ Mobile style's
         z-index: 10000;
         right: 10px;
         top: -10px;
+        z-index: 200000;
     }
     .menu-dropdown-icon:before {
         display: block;
@@ -349,18 +362,21 @@ Mobile style's
     }
     .menu > ul > li > ul.normal-sub {
         width: 100%;
+        z-index: 200000;
 
     }
     .menu > ul > li > ul > li {
         float: none;
         width: 100%;
         margin-top: 20px;
+        z-index: 200000;
     }
     .menu > ul > li > ul > li:first-child {
         margin: 0;
     }
     .menu > ul > li > ul > li > ul {
         position: relative;
+        z-index: 200000;
     }
     .menu > ul > li > ul > li > ul > li {
         float: none;
