@@ -46,7 +46,7 @@ class OnePageSwitcher extends React.Component {
               </a>
             </ScrollSection>
 
-            <ScrollSection style={{backgroundImage: 'url(http://hbimg.b0.upaiyun.com/85d65ddd02d0a6931de69a40fa8af40a2102fdc410cf6-UilGOw_fw658)',
+            <ScrollSection style={{backgroundImage: 'url(/images/second.jpg)',
                                    backgroundRepeat: 'no-repeat', backgroundSize: "100%", backgroundPosition: "center",backgroundColor: "#0e0d0b"}}
                                    pageId={1}>
             </ScrollSection>
