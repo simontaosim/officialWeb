@@ -4,17 +4,25 @@ import React from 'react';
 
 import { Carousel, Button } from 'antd';
 import ScrollAnim from 'rc-scroll-anim';
-
-
+import QueueAnim from 'rc-queue-anim';
+import TweenOne from 'rc-tween-one';
+import Animate from 'rc-animate';
 import { Parallax } from 'rc-scroll-anim';
 
-import {ScrollSection, ScrollContainer} from 'react-onepage-scroll'
+
+
+import {ScrollSection, ScrollContainer} from './index.js'
 
 import $ from "jquery";
 
 $("._2dlB18uE5dNdFUyMetY79g").on("scroll", function(){
-  $("#page3").offset().top;
+  // $("#page3").offset().top;
 });
+
+
+
+
+
 
 
 
@@ -23,9 +31,18 @@ class OnePageSwitcher extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-    var top = $("#page3").offset().top;
-    console.log(top);
+  componentDidMount() {
+    // let top = $("#page3").offset().top;
+    // console.log(top);
+  }
+
+  handlePageShow(number){
+    console.log(number);
+    $("#page-section"+number).find(".pure-g").hide(function(){
+      $(this).fadeIn("slow");
+    });
+
+
   }
 
   render() {
@@ -38,7 +55,7 @@ class OnePageSwitcher extends React.Component {
 
     return (
 
-          <ScrollContainer>
+          <ScrollContainer handlePageShow={this.handlePageShow.bind(this)}>
             <ScrollSection style={{background: 'url(/images/firstsail.jpg) no-repeat',
                                    backgroundSize: "100%", backgroundPosition: "center",backgroundColor: "#0e0d0b" }}
                                    pageId={0}>
@@ -49,13 +66,19 @@ class OnePageSwitcher extends React.Component {
             <ScrollSection style={{backgroundImage: 'url(/images/second.jpg)',
                                    backgroundRepeat: 'no-repeat', backgroundSize: "100%", backgroundPosition: "center",backgroundColor: "#0e0d0b"}}
                                    pageId={1}>
+
+
+                                    <div style={{ overflow: 'hidden' }}>
+
+     </div>
+
             </ScrollSection>
 
             <ScrollSection  style={{backgroundImage: 'url(http://ww4.sinaimg.cn/large/95da7f3djw1ehw0a3et75j20hr0qo400.jpg)',
                                    backgroundRepeat: 'no-repeat', backgroundSize: "100%", backgroundPosition: "center", backgroundColor: "#0e0d0b"}}
                            pageId={2}>
-                           <div id="page3" style={{color: "white"}}><h1>hello</h1></div>
-                           <div className="pure-g" style={{
+
+                           <div id="" className="pure-g" style={{
                              color: "white",
                              position: "relative",
                              top: "36%",
@@ -64,6 +87,7 @@ class OnePageSwitcher extends React.Component {
                                 <div style={contentStyle} className="pure-u-1-4"><p>三分之一</p></div>
                                 <div style={contentStyle} className="pure-u-1-4"><p>三分之一</p></div>
                             </div>
+
 
             </ScrollSection>
           </ScrollContainer>

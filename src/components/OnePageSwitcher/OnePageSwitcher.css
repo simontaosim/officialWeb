@@ -20,3 +20,9 @@ html,body{
     height: 100.1% !important;
 
 }
+.code-box-shape{
+  transform: 'translateX(-100px)';
+   opacity: 0;
+   left: 80px;
+   color: white;
+}

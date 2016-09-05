@@ -86,7 +86,7 @@ class MainHeader extends React.Component {
       </Media>
       </div>
 
-      <div style={{position: "relative", top: "55px"}}>
+      <div style={{position: "relative", top: "55px", height: "100%"}}>
         {this.props.children}
       </div>
 
