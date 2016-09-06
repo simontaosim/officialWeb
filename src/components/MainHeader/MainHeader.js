@@ -13,10 +13,6 @@ import TweenOne from 'rc-tween-one';
 import './MainHeader.css';
 
 
-
-
-
-
 class MainHeader extends React.Component {
   constructor(props) {
     super(props)
@@ -53,7 +49,7 @@ class MainHeader extends React.Component {
             </div>
 
         ) : (
-          <div style={{textAlign: "center", color: "white", height:"137px"}}>
+          <div style={{textAlign: "center", color: "white"}}>
                 <br/>
                   <QueueAnim delay={1000} animConfig={[
                       { opacity: [1, 0], translateY: [0, 50] },
@@ -65,7 +61,7 @@ class MainHeader extends React.Component {
                         className="code-box-shape"
                         key="a"
                       >
-                          <div key="a">  <h1>金莱蒂</h1></div>
+                          <div key="a"> <img src="/images/logoC.png" width="250" /></div>
                       </TweenOne>
                       <TweenOne
                           animation={{ blur: '10px', yoyo: true, duration: 500, repeat: 1 }}
@@ -73,9 +69,15 @@ class MainHeader extends React.Component {
                           className="code-box-shape"
                           key="b"
                         >
-                          <div key="b">  <h3>玩味在城市街巷的尊贵</h3></div>
+                          <div key="b">
+                            <img src="/images/slogon.png" height="40" width="200" style={{
+                              position: "relative",
+                              top: "10px"
+                            }}/>
+
+                          </div>
                     </TweenOne>
-                      <br/><br/>
+                      <br/>
                       <MainNav key="c"/>
                   </QueueAnim>
 

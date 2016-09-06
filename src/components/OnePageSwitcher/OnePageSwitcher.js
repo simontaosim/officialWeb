@@ -8,22 +8,13 @@ import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import Animate from 'rc-animate';
 import { Parallax } from 'rc-scroll-anim';
+import './OnePageSwitcher.css';
 
 
 
 import {ScrollSection, ScrollContainer} from './index.js'
 
 import $ from "jquery";
-
-$("._2dlB18uE5dNdFUyMetY79g").on("scroll", function(){
-  // $("#page3").offset().top;
-});
-
-
-
-
-
-
 
 
 class OnePageSwitcher extends React.Component {
@@ -38,10 +29,20 @@ class OnePageSwitcher extends React.Component {
 
   handlePageShow(number){
     console.log(number);
-    $("#page-section"+number).find(".pure-g").hide(function(){
-      $(this).fadeIn("slow");
-    });
-
+    let queue = $("#page-section"+number).find(".main-desc"+number).find("p");
+    queue.hide();
+    var index = 0;
+    let showOff = function(index){
+      if (index >= queue.length ) {
+        return;
+        index = 0;
+      }
+      $(queue[index]).fadeIn("2500", function(){
+        index = index + 1
+        showOff(index);
+      })
+    }
+    showOff(index);
 
   }
 
@@ -57,25 +58,32 @@ class OnePageSwitcher extends React.Component {
 
           <ScrollContainer handlePageShow={this.handlePageShow.bind(this)}>
             <ScrollSection style={{background: 'url(/images/firstsail.jpg) no-repeat',
-                                   backgroundSize: "100%", backgroundPosition: "center",backgroundColor: "#0e0d0b" }}
+                                   backgroundSize: "cover", backgroundPosition: "center",backgroundColor: "#0e0d0b" }}
                                    pageId={0}>
-                <a><img style={{position: 'absolute', top: 0, right: 0, border: 0, zIndex: 999}} src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"/>
-              </a>
+                                   <div className="main-desc0">
+                                    <p>品牌经营者选择放弃商品单价的高利润，</p>
+                                    <p>让金莱蒂的珠宝与更多人产生了一种特殊的关联，</p>
+                                    <p>像穿梭在街巷的魔术师，</p>
+                                    <p>将这些珍贵的珠宝和平凡美好的人们牢牢绑在一起，</p>
+                                    <p>参与他们每一个生活的片段和幸福的时刻。</p>
+                                   </div>
+
             </ScrollSection>
 
             <ScrollSection style={{backgroundImage: 'url(/images/second.jpg)',
-                                   backgroundRepeat: 'no-repeat', backgroundSize: "100%", backgroundPosition: "center",backgroundColor: "#0e0d0b"}}
+                                   backgroundRepeat: 'no-repeat', backgroundSize: "cover", backgroundPosition: "center",backgroundColor: "#0e0d0b"}}
                                    pageId={1}>
 
 
-                                    <div style={{ overflow: 'hidden' }}>
-
-     </div>
+                                   <div className="main-desc1">
+                                    <p>金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，</p>
+                                    <p>每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。</p>
+                                   </div>
 
             </ScrollSection>
 
-            <ScrollSection  style={{backgroundImage: 'url(http://ww4.sinaimg.cn/large/95da7f3djw1ehw0a3et75j20hr0qo400.jpg)',
-                                   backgroundRepeat: 'no-repeat', backgroundSize: "100%", backgroundPosition: "center", backgroundColor: "#0e0d0b"}}
+            <ScrollSection  style={{backgroundImage: 'url(/images/third.jpg)',
+                                   backgroundRepeat: 'no-repeat', backgroundSize: "cover", backgroundPosition: "center", backgroundColor: "#0e0d0b"}}
                            pageId={2}>
 
                            <div id="" className="pure-g" style={{

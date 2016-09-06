@@ -77,7 +77,7 @@ Screen style's
     cursor: pointer;
     float: right;
     padding: 1.5em 2.1em;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.1);
     color: #96632E;
 }
 
@@ -126,10 +126,13 @@ Screen style's
 .menu > ul > li > ul {
     display: none;
     width: 100%;
-    background: rgba(255,255,255,0.8);
+    /*background: url(/images/mainNav.png) no-repeat;
+    background-size: cover;*/
     padding: 20px;
     position: absolute;
-    top:66px;
+    background-color: rgba(86,63,46,0.4);
+    color: white !important;
+    top:60px;
     z-index: 99;
     left: 0;
     margin: 0;
@@ -173,6 +176,7 @@ Screen style's
     position: relative;
     left: 3px;
     text-align: center;
+    color: white;
 }
 .menu > ul > li > ul  li:first-child ul li a:hover{
     background: rgba(255,255,255,0.8);
@@ -182,7 +186,7 @@ Screen style's
 
 
 .menu > ul > li > ul > li a {
-    color: #96632E;
+    color: white;
     font-size: 1.2em;
     padding: .2em 0;
     width: 95%;

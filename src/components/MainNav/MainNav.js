@@ -90,6 +90,12 @@ class MainNav extends React.Component {
 
 
   render() {
+    const circleStytle = {
+      borderRadius: '100px',
+      WebkitBorderRadius: '100px',
+      MozBorderRadius: '100px',
+      background: "none !important"
+    }
     return(
       <div className="main-nav">
       <br/>
@@ -109,7 +115,7 @@ class MainNav extends React.Component {
                               </ul>
                             </li>
                             <li  id="brandExpress" style={{position:"relative", top: "20px", width: "33%"}}>
-                              <div  style={{float:"left", padding: "10px", color: "#43341B"}}>
+                              <div  style={{float:"left", padding: "10px", color: "white"}}>
                                   <h2>品牌历程</h2>
                                   <hr/>
                                   <p>罗里吧嗦，balala</p>
@@ -120,7 +126,7 @@ class MainNav extends React.Component {
 
 
                             <li  id="brandIdea" style={{position:"relative", top: "20px", width: "33%"}}>
-                              <div  style={{float:"left", padding: "10px", color: "#43341B"}}>
+                              <div  style={{float:"left", padding: "10px", color: "white"}}>
                                   <h2>品牌理念</h2>
                                   <hr/>
                                   <p>罗里吧嗦，balala</p>
@@ -129,7 +135,7 @@ class MainNav extends React.Component {
                               <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
                             </li>
                             <li  id="shoresIntro" style={{position:"relative", top: "20px", width: "33%"}}>
-                              <div  style={{float:"left", padding: "10px", color: "#43341B"}}>
+                              <div  style={{float:"left", padding: "10px", color: "white"}}>
                                   <h2>专卖店</h2>
                                   <hr/>
                                   <p>罗里吧嗦，balala</p>
@@ -143,7 +149,7 @@ class MainNav extends React.Component {
                         </ul>
                     </li>
                     <li><a href="#">联系我们</a>
-                        <ul style={{color: "#43341B"}}>
+                        <ul style={{color: "white",top: "62px"}}>
                             <li>
                               <ul>
                                 <h3>Number</h3>
@@ -170,13 +176,13 @@ class MainNav extends React.Component {
                             </li>
                         </ul>
                     </li>
-                    <li className="menu-logo" style={{background: "none"}}>
-                    <a　style={{color: "#43341B", fontSize: "1.4em", border: "none", fontWeight: "bolder", textAlign: "center"}}>
-                      <img src="/images/logo.jpg" style={{width:"130px", position: "relative", top: "-41px"}} />
+                    <li className="menu-logo" style={circleStytle}>
+                    <a　style={{color: "white", fontSize: "1.4em", border: "none", fontWeight: "bolder", textAlign: "center"}}>
+                        <img src="/images/logoP.png" style={{width:"130px", position: "relative", top: "-10px", right: "8px"}} />
                     </a>
                     </li>
                     <li><a href="#">婚尚臻品</a>
-                        <ul  style={{color: "#43341B"}}>
+                        <ul  style={{color: "white"}}>
                             <li>
                                 <ul>
                                     <li><a href="#">婚嫁珠宝</a></li>
@@ -195,7 +201,7 @@ class MainNav extends React.Component {
                               <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
                             </li>
                             <li style={{position:"relative", top: "20px", width: "33%"}}>
-                              <div  style={{float:"left", padding: "10px", color: "#43341B"}}>
+                              <div  style={{float:"left", padding: "10px", color: "white"}}>
                                   <h2>定制</h2>
                                   <hr/>
                                   <p>罗里吧嗦，balala</p>
@@ -206,7 +212,7 @@ class MainNav extends React.Component {
                         </ul>
                     </li>
                       <li><a href="#">臻美宝石</a>
-                        <ul   style={{color: "#43341B"}}>
+                        <ul   style={{color: "white"}}>
                           <li>
                               <ul>
                                   <li><a href="#">珍珠</a></li>
