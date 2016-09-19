@@ -13,12 +13,9 @@ const Routes = ({ history }) =>
   <Router history={history}>
     <Route path="/" component={MainHeader}>
       <IndexRoute component={OnePageSwitcher} />
-
+      <Route path="*" component={NotFound}/>
     </Route>
-    <Route path="/homedemo" component={Home}/>
-    <Route path="/scrolldemo" component={AntdScroll} />
-    <Route path="/linkdemo" component={AntdLink} />
-    <Route path="*" component={NotFound}/>
+
   </Router>;
 
 Routes.propTypes = {

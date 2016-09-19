@@ -10,11 +10,15 @@ import Animate from 'rc-animate';
 import { Parallax } from 'rc-scroll-anim';
 import './OnePageSwitcher.css';
 
+import Footer from '../Footer';
+
 
 
 import {ScrollSection, ScrollContainer} from './index.js'
 
 import $ from "jquery";
+
+
 
 
 class OnePageSwitcher extends React.Component {
@@ -48,11 +52,7 @@ class OnePageSwitcher extends React.Component {
 
   render() {
 
-    const contentStyle = {
-      textAlign: "center",
-       backgroundColor: "rgba(53, 45, 45, 0.5)",
-       margin: "35px"
-    }
+    
 
     return (
 
@@ -83,18 +83,12 @@ class OnePageSwitcher extends React.Component {
             </ScrollSection>
 
             <ScrollSection  style={{backgroundImage: 'url(/images/third.jpg)',
-                                   backgroundRepeat: 'no-repeat', backgroundSize: "cover", backgroundPosition: "center", backgroundColor: "#0e0d0b"}}
+                                   backgroundRepeat: 'no-repeat', backgroundSize: "cover", backgroundPosition: "center", backgroundColor: "#0e0d0b",
+                                    textAlign: "center"
+                                 }}
                            pageId={2}>
 
-                           <div id="" className="pure-g" style={{
-                             color: "white",
-                             position: "relative",
-                             top: "36%",
-                             textAlign: "center", margin: "15px"}}>
-                                <div style={contentStyle} className="pure-u-1-4"><p>三分之一</p></div>
-                                <div style={contentStyle} className="pure-u-1-4"><p>三分之一</p></div>
-                                <div style={contentStyle} className="pure-u-1-4"><p>三分之一</p></div>
-                            </div>
+                           <Footer />
 
 
             </ScrollSection>
