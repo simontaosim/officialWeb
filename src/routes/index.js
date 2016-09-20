@@ -9,8 +9,8 @@ import AntdScroll from '../components/AntdScroll';
 import AntdLink from '../components/AntdLink';
 
 
-const Routes = ({ history }) =>
-  <Router history={history}>
+const Routes = ({ location }) =>
+  <Router history={location}>
     <Route path="/" component={MainHeader}>
       <IndexRoute component={OnePageSwitcher} />
       <Route path="*" component={NotFound}/>

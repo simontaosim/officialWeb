@@ -2,6 +2,12 @@
 
 import React from 'react';
 
+import { Carousel, Button } from 'antd';
+import ScrollAnim from 'rc-scroll-anim';
+import QueueAnim from 'rc-queue-anim';
+import TweenOne from 'rc-tween-one';
+import Animate from 'rc-animate';
+import { Parallax } from 'rc-scroll-anim';
 import './OnePageSwitcher.css';
 
 import Footer from '../Footer';
@@ -14,6 +20,7 @@ import $ from "jquery";
 
 
 
+
 class OnePageSwitcher extends React.Component {
   constructor(props) {
     super(props);
@@ -22,23 +29,17 @@ class OnePageSwitcher extends React.Component {
   componentDidMount() {
     // let top = $("#page3").offset().top;
     // console.log(top);
-      const { location } = this.props;
-      console.log(location.pathname);
   }
 
   handlePageShow(number){
-
+    console.log(number);
     let queue = $("#page-section"+number).find(".main-desc"+number).find("p");
-    let footer = $("#footer");
-
     queue.hide();
     var index = 0;
     let showOff = function(index){
       if (index >= queue.length ) {
-        footer.hide();
-        footer.fadeIn("slow");
-        index = 0;
         return;
+        index = 0;
       }
       $(queue[index]).fadeIn("2500", function(){
         index = index + 1
@@ -51,7 +52,7 @@ class OnePageSwitcher extends React.Component {
 
   render() {
 
-
+    
 
     return (
 

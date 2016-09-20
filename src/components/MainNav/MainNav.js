@@ -2,7 +2,6 @@
 import React from 'react';
 import './MainNav.css';
 import $ from "jquery";
-import googlefonts from 'googlefonts';
 import './Ionicons.min.css';
 import Media from 'react-media';
 
@@ -14,6 +13,15 @@ class MainNav extends React.Component {
 
 
   componentDidMount() {
+    //=================================
+    // // 百度地图API功能
+    // var map = new BMap.Map("allmap");
+    // map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+    // var local = new BMap.LocalSearch(map, {
+    //   renderOptions:{map: map}
+    // });
+    // local.search("景点");
+    //===================================
     $('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
     //Checks if li has sub (ul) and adds class for toggle icon - just an UI
 
@@ -118,7 +126,8 @@ class MainNav extends React.Component {
                               <div  style={{float:"left", padding: "10px", color: "white"}}>
                                   <h2>品牌历程</h2>
                                   <hr/>
-                                  <p>罗里吧嗦，balala</p>
+                                  <p>金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，</p>
+                                  <p>每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。</p>
                               </div>
 
                               <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
@@ -129,7 +138,11 @@ class MainNav extends React.Component {
                               <div  style={{float:"left", padding: "10px", color: "white"}}>
                                   <h2>品牌理念</h2>
                                   <hr/>
-                                  <p>罗里吧嗦，balala</p>
+                                  <p>品牌经营者选择放弃商品单价的高利润，</p>
+                                  <p>让金莱蒂的珠宝与更多人产生了一种特殊的关联，</p>
+                                  <p>像穿梭在街巷的魔术师，</p>
+                                  <p>将这些珍贵的珠宝和平凡美好的人们牢牢绑在一起，</p>
+                                  <p>参与他们每一个生活的片段和幸福的时刻。</p>
                               </div>
 
                               <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
@@ -141,7 +154,8 @@ class MainNav extends React.Component {
                                   <p>罗里吧嗦，balala</p>
                               </div>
 
-                              <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                              {/* <img src="/images/default.jpg" style={{width:"130px", float:"left"}} /> */}
+                                <div id="allmap"></div>
                             </li>
 
 
@@ -153,25 +167,25 @@ class MainNav extends React.Component {
                             <li>
                               <ul>
                                 <h3>Number</h3>
-                                <p>12342134123421</p>
+                                <p>028-86928156</p>
                               </ul>
                             </li>
                             <li>
                               <ul>
                                 <h3>邮箱</h3>
-                                <p>12342134123421</p>
+                                <p>support@kinglaidi.com</p>
                               </ul>
                             </li>
                             <li>
                               <ul>
                                 <h3>HR</h3>
-                                <p>hr@xxxx.com</p>
+                                <p>hr@kinglaidi.com</p>
                               </ul>
                             </li>
                             <li>
                               <ul>
                                 <h3>地址</h3>
-                                <p>12342134123421</p>
+                                <p>成都市锦江区上东大街139号四楼</p>
                               </ul>
                             </li>
                         </ul>

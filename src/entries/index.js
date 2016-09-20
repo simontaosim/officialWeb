@@ -8,4 +8,4 @@ import $ from "jquery";
 
 import './pure-min.css'
 
-ReactDOM.render(<Routes history={hashHistory} />, document.getElementById('react-content'));
+ReactDOM.render(<Routes location={hashHistory} />, document.getElementById('react-content'));

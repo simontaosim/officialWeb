@@ -4,9 +4,7 @@ import React from 'react';
 import MainNav from "../MainNav/MainNav";
 import TopNav　from "../TopNav/TopNav";
 import Media from 'react-media';
-import {Button} from 'antd'
 import QueueAnim from 'rc-queue-anim';
-import Animate from 'rc-animate';
 import TweenOne from 'rc-tween-one';
 
 
