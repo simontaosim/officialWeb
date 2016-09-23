@@ -1,22 +1,46 @@
 import React, { PropTypes } from 'react';
-import { Router, Route, IndexRoute, Link } from 'react-router';
-import App from '../components/App';
+import { Provider, connect } from 'react-redux';
+import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
+import { syncHistoryWithStore} from 'react-router-redux';
+import configureStore from "../../stores/Main";
+
 import NotFound from '../components/NotFound';
 import MainHeader from '../components/MainHeader/MainHeader'
-import OnePageSwitcher　from '../components/OnePageSwitcher/OnePageSwitcher'
+import OnePageSwitcher　from '../components/OnePageSwitcher/index'
 import Home from '../components/body/index';
 import AntdScroll from '../components/AntdScroll';
 import AntdLink from '../components/AntdLink';
+import ShopSwitcher from '../components/ShopSwitcher/index'
 
+const store = configureStore();
+const history = syncHistoryWithStore(hashHistory, store);
 
-const Routes = ({ location }) =>
+var isFreshed = false;
+
+const changePage = (nextState, replace, callback) => {
+
+  if (isFreshed) {
+    window.location.reload();
+    isFreshed = !isFreshed;
+  }
+  callback();
+}
+
+const Routes = ({ location, shopId }) =>
+<Provider store={store}>
   <Router history={location}>
     <Route path="/" component={MainHeader}>
-      <IndexRoute component={OnePageSwitcher} />
+      <IndexRoute  component={OnePageSwitcher} />
+      <Route path="/brandidea" component={OnePageSwitcher} />
+      <Route path="/brandprogress" component={OnePageSwitcher} />
+      <Route path="/shops" component={ShopSwitcher} />
+      <Route path="/shops/:id"  component={ShopSwitcher} />
       <Route path="*" component={NotFound}/>
+
     </Route>
 
-  </Router>;
+  </Router>
+</Provider>;
 
 Routes.propTypes = {
   history: PropTypes.any,

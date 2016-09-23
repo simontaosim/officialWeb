@@ -36,7 +36,7 @@ Screen style's
 .menu-container {
     width: 95%;
     margin: 0 auto;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.8);
     box-sizing: border-box;
     height: 64px;
 }
@@ -130,7 +130,7 @@ Screen style's
     background-size: cover;*/
     padding: 20px;
     position: absolute;
-    background-color: rgba(86,63,46,0.4);
+    background-color: rgba(86,63,46,0.83);
     color: white !important;
     top:60px;
     z-index: 99;
@@ -179,7 +179,7 @@ Screen style's
     color: white;
 }
 .menu > ul > li > ul  li:first-child ul li a:hover{
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.5);
     color:#43341B !important;
     text-align: center;
 }

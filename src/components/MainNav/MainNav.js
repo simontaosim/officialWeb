@@ -4,15 +4,21 @@ import './MainNav.css';
 import $ from "jquery";
 import './Ionicons.min.css';
 import Media from 'react-media';
+import { Link } from 'react-router';
 
 
 class MainNav extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      page: 0,
+    }
   }
 
 
   componentDidMount() {
+
     //=================================
     // // 百度地图API功能
     // var map = new BMap.Map("allmap");
@@ -77,24 +83,32 @@ class MainNav extends React.Component {
     //when clicked on mobile-menu, normal menu is shown as a list, classic rwd menu story (thanks mwl from stackoverflow)
     $("#brandExpress").show();
     $("#brandIdea").hide();
-    $("#shoresIntro").hide();
+    $(".shoresIntro").hide();
   }
   showBrandExpress(){
     $("#brandExpress").show();
     $("#brandIdea").hide();
-    $("#shoresIntro").hide();
+    $(".shoresIntro").hide();
   }
 
   showBrandIdea(){
     $("#brandExpress").hide();
     $("#brandIdea").show();
-    $("#shoresIntro").hide();
+    $(".shoresIntro").hide();
   }
   showShoresIntro(){
     $("#brandExpress").hide();
     $("#brandIdea").hide();
-    $("#shoresIntro").show();
+    $(".shoresIntro").show();
   }
+
+  handleShopsClick() {
+    this.setState({page: 0});
+    console.log("state");
+    this.props.handleMenuClick(this.state);
+  }
+
+
 
 
   render() {
@@ -103,6 +117,10 @@ class MainNav extends React.Component {
       WebkitBorderRadius: '100px',
       MozBorderRadius: '100px',
       background: "none !important"
+    }
+    const shopAddressStyle = {
+      color: "white",
+      fontSize: "16px"
     }
     return(
       <div className="main-nav">
@@ -116,18 +134,17 @@ class MainNav extends React.Component {
                         <ul>
                             <li>
                               <ul>
-                                <li onMouseOver={this.showBrandExpress.bind(this)}><a href="#">品牌历程</a></li>
-                                <li onMouseOver={this.showBrandIdea.bind(this)}><a href="#">品牌理念</a></li>
-                                <li onMouseOver={this.showShoresIntro.bind(this)}><a href="#">专卖店</a></li>
+                                <li onMouseOver={this.showBrandExpress.bind(this)}><a href="#/brandprogress">品牌历程</a></li>
+                                <li onMouseOver={this.showBrandIdea.bind(this)}><a href="#/brandidea">品牌理念</a></li>
+                                <li onMouseOver={this.showShoresIntro.bind(this)}><a  href="#/shops" className="page-active0">专卖店</a></li>
 
                               </ul>
                             </li>
                             <li  id="brandExpress" style={{position:"relative", top: "20px", width: "33%"}}>
-                              <div  style={{float:"left", padding: "10px", color: "white"}}>
-                                  <h2>品牌历程</h2>
-                                  <hr/>
-                                  <p>金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，</p>
-                                  <p>每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。</p>
+                              <div  style={{float:"left", padding: "10px", color: "white", wordWrap: "break-word", width: "50%", textAlign: "left"}}>
+
+                                  金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，
+                                  每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。
                               </div>
 
                               <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
@@ -135,28 +152,36 @@ class MainNav extends React.Component {
 
 
                             <li  id="brandIdea" style={{position:"relative", top: "20px", width: "33%"}}>
-                              <div  style={{float:"left", padding: "10px", color: "white"}}>
-                                  <h2>品牌理念</h2>
-                                  <hr/>
-                                  <p>品牌经营者选择放弃商品单价的高利润，</p>
-                                  <p>让金莱蒂的珠宝与更多人产生了一种特殊的关联，</p>
-                                  <p>像穿梭在街巷的魔术师，</p>
-                                  <p>将这些珍贵的珠宝和平凡美好的人们牢牢绑在一起，</p>
-                                  <p>参与他们每一个生活的片段和幸福的时刻。</p>
+                              <div  style={{float:"left", padding: "10px", color: "white", wordWrap: "break-word", width: "50%", textAlign: "left"}}>
+                                  品牌经营者选择放弃商品单价的高利润，
+                                  让金莱蒂的珠宝与更多人产生了一种特殊的关联，
+                                  像穿梭在街巷的魔术师，将这些珍贵的珠宝和平凡美好的人们牢牢绑在一起，
+                                  参与他们每一个生活的片段和幸福的时刻。
                               </div>
 
                               <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
                             </li>
-                            <li  id="shoresIntro" style={{position:"relative", top: "20px", width: "33%"}}>
-                              <div  style={{float:"left", padding: "10px", color: "white"}}>
-                                  <h2>专卖店</h2>
-                                  <hr/>
-                                  <p>罗里吧嗦，balala</p>
-                              </div>
+                            <li  className="shoresIntro">
+                              <ul>
+                                <li><a  href="/#/shops/1" style={shopAddressStyle}>草金立交正成广场家乐福店</a></li>
+                                <li><a href="/#/shops/2" style={shopAddressStyle}>簇桥欧尚金大福</a></li>
+                                <li><a href="/#/shops/3" style={shopAddressStyle}>华阳银泰城永辉店</a></li>
+
+                              </ul>
 
                               {/* <img src="/images/default.jpg" style={{width:"130px", float:"left"}} /> */}
                                 <div id="allmap"></div>
                             </li>
+                            <li  className="shoresIntro">
+                              <ul>
+                                <li><a href="/#/shops/4" style={shopAddressStyle}>内江万达永辉店</a></li>
+                                <li><a href="/#/shops/5" style={shopAddressStyle}>武侯祠茂业百货店</a></li>
+                              </ul>
+
+                              {/* <img src="/images/default.jpg" style={{width:"130px", float:"left"}} /> */}
+                                <div id="allmap"></div>
+                            </li>
+
 
 
 
@@ -248,7 +273,7 @@ class MainNav extends React.Component {
 
                           </ul>
                       </li>
-                      <li><a href="#">优惠信息</a></li>
+                      <li><a href="#">品牌活动</a></li>
 
                       <Media query="(max-width: 959px)">
                         {matches => matches ? (

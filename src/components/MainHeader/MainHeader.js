@@ -7,6 +7,8 @@ import Media from 'react-media';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 
+import $ from 'jquery'
+
 
 import './MainHeader.css';
 
@@ -15,18 +17,30 @@ class MainHeader extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      titleShow: false
+      titleShow: false,
+      page: 0,
+      
     }
   }
   componentDidMount() {
+
+
 
   }
   handleMainNavScale(e){
     console.log("onchange");
   }
 
+  handleMenuClick(state){
+    console.log(state);
+  }
+
 
   render() {
+    let children = React.Children.map(this.props.children, function(){
+
+  });
+  console.log(children);
     return(
       <div>
 
@@ -75,7 +89,7 @@ class MainHeader extends React.Component {
                           </div>
                     </TweenOne>
                       <br/>
-                      <MainNav key="c"/>
+                      <MainNav key="c" handleMenuClick={this.handleMenuClick.bind(this)}/>
                   </QueueAnim>
 
 
@@ -85,7 +99,7 @@ class MainHeader extends React.Component {
       </Media>
       </div>
 
-      <div style={{position: "relative", top: "55px", height: "100%"}}>
+      <div style={{position: "relative", top: "0", height: "100%"}}>
         {this.props.children}
       </div>
 

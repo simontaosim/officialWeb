@@ -1,30 +1,124 @@
 import React from 'react';
 import {Motion, spring} from 'react-motion';
 import _ from 'lodash'
-import styles from './ScrollContainer.less'
+import styles from './ScrollContainer.less';
 
 const ScrollContainer = React.createClass({
   getInitialState() {
+      const {pathname} = this.props;
     return {
       touchStart: 0,
       direction: 0,
       touchControl: false,
       active: 0,
-      allow: false // 为false的时候不会update component
+      allow: false,// 为false的时候不会update component
     };
   },
 
   componentDidMount(){
+    this.setState({
+      allow: false,
+      direction: 0,
+      touchControl: false,
+      active: 0
+    })
+    const {pathname} = this.props;
+
+    this.moveTheNumberByPathName(pathname);
+      this.forceUpdate();
     this.handlePageShow(this.state.active);
   },
 
+  componentWillReceiveProps(nextProps){
+    const {pathname} = this.props;
+    console.log(nextProps);
+    this.moveTheNumberByPathName(pathname);
+    this.forceUpdate();
+    // this.moveTheNumberByPathName(pathname);
+  },
+
   handleMouseDown() {
+        console.log("mouseDown");
     this.setState({active: this.props.children.length-1 });
   },
+
+  getActiveByPathname(pathname){
+    switch (pathname) {
+      case "/shops":
+        return 0;
+        break;
+      case "/shops/1":
+        return 0;
+        break;
+      case "/shops/2":
+        return 1;
+        break;
+      case "/shops/3":
+          return 2;
+      case "/shops/4":
+      return 3;
+      case "/shops/5":
+        return 4;
+      case "/shops/6":
+          return 5;
+      case "/shops/7":
+        return 6;
+      case "/brandidea":
+          return 0;
+      case "/brandprogress":
+          return 1;
+      default:
+      return 0;
+        break;
+
+    }
+
+  },
+
+  moveTheNumberByPathName(pathname){
+    switch (pathname) {
+      case "/shops":
+        this.setState({allow: true, active:0});
+        break;
+      case "/shops/1":
+        this.setState({allow: true, active:0});
+        break;
+      case "/shops/2":
+        this.setState({allow: true, active:1});
+        break;
+      case "/shops/3":
+          this.setState({allow: true, active:2});
+          break;
+      case "/shops/4":
+        this.setState({allow: true, active:3});
+        break;
+      case "/shops/5":
+          this.setState({allow: true, active:4});
+          break;
+      case "/shops/6":
+          this.setState({allow: true, active:5});
+          break;
+      case "/shops/7":
+          this.setState({allow: true, active:6});
+          break;
+      case "/brandidea":
+          this.setState({allow: false, active:0});
+          break;
+      case "/brandprogress":
+          this.setState({allow: false, active:1});
+          break;
+      default:
+        this.setState({allow: false, active:0});
+        break;
+
+    }
+  },
+
 
   moveDown(){
     // console.log('this.state.active:', this.state.active)
     // console.log(' this.props.children.length-1',  this.props.children.length-1)
+    // console.log("moveDown");
     this.setState({ allow: true,
                     active: this.state.active === this.props.children.length-1 ? this.props.children.length-1 : (this.state.active + 1) })
     this.handlePageShow(this.state.active+1);
@@ -57,6 +151,8 @@ const ScrollContainer = React.createClass({
   },
 
   handleOnWheel(e){
+    // console.log(e.deltaY);
+    // console.log(this.state.allow);
     if(e.deltaY > 0 && this.state.allow === false && this.state.active !== this.props.children.length-1)
       { this.moveDown() }
     if(e.deltaY < 0 && this.state.allow === false && this.state.active !== 0)
@@ -124,6 +220,8 @@ const ScrollContainer = React.createClass({
   },
 
   render() {
+    console.log(this.props.pathname);
+
     return (
       <div>
         <ul className={styles.onepagePagination}>
@@ -166,5 +264,6 @@ const ScrollContainer = React.createClass({
     );
   },
 });
+
 
 export default ScrollContainer;

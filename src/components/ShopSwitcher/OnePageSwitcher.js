@@ -29,10 +29,11 @@ class OnePageSwitcher extends React.Component {
   componentDidMount() {
     // let top = $("#page3").offset().top;
     // console.log(top);
+
   }
 
   handlePageShow(number){
-    console.log(number);
+
     let queue = $("#page-section"+number).find(".main-desc"+number).find("p");
     queue.hide();
     var index = 0;
@@ -52,7 +53,7 @@ class OnePageSwitcher extends React.Component {
 
   render() {
 
-    
+
 
     return (
 
