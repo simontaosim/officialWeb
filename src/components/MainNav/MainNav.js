@@ -19,15 +19,7 @@ class MainNav extends React.Component {
 
   componentDidMount() {
 
-    //=================================
-    // // 百度地图API功能
-    // var map = new BMap.Map("allmap");
-    // map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
-    // var local = new BMap.LocalSearch(map, {
-    //   renderOptions:{map: map}
-    // });
-    // local.search("景点");
-    //===================================
+
     $('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
     //Checks if li has sub (ul) and adds class for toggle icon - just an UI
 
@@ -84,6 +76,9 @@ class MainNav extends React.Component {
     $("#brandExpress").show();
     $("#brandIdea").hide();
     $(".shoresIntro").hide();
+
+
+
   }
   showBrandExpress(){
     $("#brandExpress").show();
@@ -140,26 +135,26 @@ class MainNav extends React.Component {
 
                               </ul>
                             </li>
-                            <li  id="brandExpress" style={{position:"relative", top: "20px", width: "33%"}}>
+                            <li  id="brandExpress" style={{position:"relative", top: "20px", width: "33%", height:"300px"}}>
                               <div  style={{float:"left", padding: "10px", color: "white", wordWrap: "break-word", width: "50%", textAlign: "left"}}>
 
                                   金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，
                                   每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。
                               </div>
 
-                              <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                              <a style={{position:"relative", right: "-208px",top: "-140px",float:"left",padding: "10px", display:"block"}} href="#/brandprogress"><img style={{width:"180px"}} src="/images/brandprogress.jpeg" /></a>
                             </li>
 
 
-                            <li  id="brandIdea" style={{position:"relative", top: "20px", width: "33%"}}>
-                              <div  style={{float:"left", padding: "10px", color: "white", wordWrap: "break-word", width: "50%", textAlign: "left"}}>
+                            <li  id="brandIdea" style={{position:"relative", top: "20px", width: "33%", height:"300px"}}>
+                              <div  style={{ploat:"left", padding: "10px", color: "white", wordWrap: "break-word", width: "50%", textAlign: "left"}}>
                                   品牌经营者选择放弃商品单价的高利润，
                                   让金莱蒂的珠宝与更多人产生了一种特殊的关联，
                                   像穿梭在街巷的魔术师，将这些珍贵的珠宝和平凡美好的人们牢牢绑在一起，
                                   参与他们每一个生活的片段和幸福的时刻。
                               </div>
 
-                              <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                              <a style={{position:"relative", right: "-208px",top: "-152px", float:"left",padding: "10px", display: "block"}} href="#/brandidea"><img style={{width:"180px"}} src="/images/brandidea.jpeg" /></a>
                             </li>
                             <li  className="shoresIntro">
                               <ul>
@@ -170,16 +165,24 @@ class MainNav extends React.Component {
                               </ul>
 
                               {/* <img src="/images/default.jpg" style={{width:"130px", float:"left"}} /> */}
-                                <div id="allmap"></div>
+
                             </li>
                             <li  className="shoresIntro">
                               <ul>
                                 <li><a href="/#/shops/4" style={shopAddressStyle}>内江万达永辉店</a></li>
                                 <li><a href="/#/shops/5" style={shopAddressStyle}>武侯祠茂业百货店</a></li>
+                                <li><a href="/#/shops" style={shopAddressStyle}>成都市门店地图</a></li>
                               </ul>
 
                               {/* <img src="/images/default.jpg" style={{width:"130px", float:"left"}} /> */}
-                                <div id="allmap"></div>
+
+                            </li>
+                            <li  className="shoresIntro">
+
+
+                              {/* <img src="/images/default.jpg" style={{width:"130px", float:"left"}} /> */}
+
+
                             </li>
 
 
@@ -187,30 +190,34 @@ class MainNav extends React.Component {
 
                         </ul>
                     </li>
-                    <li><a href="#">联系我们</a>
-                        <ul style={{color: "white",top: "62px"}}>
+                    <li><a href="/#/contact">联系我们</a>
+                        <ul style={{color: "grey !important",top: "62px",
+                        height: "200px",  background: "url(images/contact.jpg) no-repeat",
+                        backgroundSize: "100%",
+                        backgroundColor: "rgba(12,27,51,0.3)"
+                        }}>
                             <li>
                               <ul>
-                                <h3>Number</h3>
-                                <p>028-86928156</p>
+                                <h2>Number:</h2>
+                                <h3>028-86928156</h3>
                               </ul>
                             </li>
                             <li>
                               <ul>
-                                <h3>邮箱</h3>
-                                <p>support@kinglaidi.com</p>
+                                <h2>邮箱:</h2>
+                                <h3>support@kinglaidi.com</h3>
                               </ul>
                             </li>
                             <li>
                               <ul>
-                                <h3>HR</h3>
-                                <p>hr@kinglaidi.com</p>
+                                <h2>HR:</h2>
+                                <h3>hr@kinglaidi.com</h3>
                               </ul>
                             </li>
                             <li>
                               <ul>
-                                <h3>地址</h3>
-                                <p>成都市锦江区上东大街139号四楼</p>
+                                <h2>地址:</h2>
+                                <h3>成都市锦江区上东大街139号四楼</h3>
                               </ul>
                             </li>
                         </ul>

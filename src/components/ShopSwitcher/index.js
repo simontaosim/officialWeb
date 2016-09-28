@@ -24,9 +24,48 @@ class ShopSwitcher extends React.Component {
   componentDidMount() {
     // let top = $("#page3").offset().top;
     // console.log(top);
+    $("#pageTitle").html("成都市内门店");
+    $("#allmap").ready(function(){
+      //=================================
+      // 百度地图API功能
+      var map = new BMap.Map("allmap");
+      map.centerAndZoom("成都", 15);
+      var local = new BMap.LocalSearch(map, {
+        renderOptions:{map: map}
+      });
+      local.search("金莱蒂");
+      //===================================
+    });
   }
 
   handlePageShow(number){
+    switch (number) {
+      case 0:
+        $("#pageTitle").html("成都市内门店");
+        break;
+      case 1:
+        $("#pageTitle").html("草金立交正成广场家乐福店");
+        break;
+      case 2:
+        $("#pageTitle").html("华阳银泰城永辉店");
+        break;
+      case 3:
+        $("#pageTitle").html("内江万达永辉店");
+        break;
+      case 4:
+        $("#pageTitle").html("武侯祠茂业百货店");
+        break;
+      case 5:
+        $("#pageTitle").html("华阳银泰城永辉店");
+        break;
+      case 6:
+        $("#pageTitle").html("武侯祠茂业百货店");
+        break;
+      default:
+          $("#pageTitle").html("金莱蒂");
+          break;
+
+    }
 
     let queue = $("#page-section"+number).find(".main-desc"+number).find("p");
     let footer = $("#footer");
@@ -60,13 +99,8 @@ class ShopSwitcher extends React.Component {
             <ScrollSection style={{background: 'url(/images/shop1.jpg) no-repeat',
                                    backgroundSize: "cover", backgroundPosition: "center",backgroundColor: "#0e0d0b" }}
                                    pageId={0}>
-                                   <div className="main-desc0">
-                                    <p>品牌经营者选择放弃商品单价的高利润，</p>
-                                    <p>让金莱蒂的珠宝与更多人产生了一种特殊的关联，</p>
-                                    <p>像穿梭在街巷的魔术师，</p>
-                                    <p>将这些珍贵的珠宝和平凡美好的人们牢牢绑在一起，</p>
-                                    <p>参与他们每一个生活的片段和幸福的时刻。</p>
-                                   </div>
+
+                                     <div id="allmap">html</div>
 
             </ScrollSection>
 
@@ -75,10 +109,7 @@ class ShopSwitcher extends React.Component {
                                    pageId={1}>
 
 
-                                   <div className="main-desc1">
-                                    <p>金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，</p>
-                                    <p>每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。</p>
-                                   </div>
+
 
             </ScrollSection>
             <ScrollSection style={{backgroundImage: 'url(/images/shop3.jpg)',
@@ -86,10 +117,7 @@ class ShopSwitcher extends React.Component {
                                    pageId={2}>
 
 
-                                   <div className="main-desc1">
-                                    <p>金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，</p>
-                                    <p>每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。</p>
-                                   </div>
+
 
             </ScrollSection>
             <ScrollSection style={{backgroundImage: 'url(/images/shop4.jpg)',
@@ -97,10 +125,7 @@ class ShopSwitcher extends React.Component {
                                    pageId={3}>
 
 
-                                   <div className="main-desc1">
-                                    <p>金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，</p>
-                                    <p>每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。</p>
-                                   </div>
+
 
             </ScrollSection>
             <ScrollSection style={{backgroundImage: 'url(/images/shop5.jpg)',
@@ -108,10 +133,7 @@ class ShopSwitcher extends React.Component {
                                    pageId={4}>
 
 
-                                   <div className="main-desc1">
-                                    <p>金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，</p>
-                                    <p>每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。</p>
-                                   </div>
+
 
             </ScrollSection>
             <ScrollSection style={{backgroundImage: 'url(/images/shop6.jpg)',
@@ -119,10 +141,7 @@ class ShopSwitcher extends React.Component {
                                    pageId={5}>
 
 
-                                   <div className="main-desc1">
-                                    <p>金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，</p>
-                                    <p>每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。</p>
-                                   </div>
+
 
             </ScrollSection>
             <ScrollSection style={{backgroundImage: 'url(/images/shop7.jpg)',
@@ -130,10 +149,7 @@ class ShopSwitcher extends React.Component {
                                    pageId={6}>
 
 
-                                   <div className="main-desc1">
-                                    <p>金莱蒂品牌为顾客打造的华美珍贵宝石拥有内在品质、尺寸和来源上的保障，</p>
-                                    <p>每一颗宝石都拥有来自美国宝石学院（Gemological Institute of America）的GIA证书。</p>
-                                   </div>
+
 
             </ScrollSection>
 

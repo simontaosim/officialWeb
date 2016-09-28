@@ -10,7 +10,8 @@ import OnePageSwitcher　from '../components/OnePageSwitcher/index'
 import Home from '../components/body/index';
 import AntdScroll from '../components/AntdScroll';
 import AntdLink from '../components/AntdLink';
-import ShopSwitcher from '../components/ShopSwitcher/index'
+import ShopSwitcher from '../components/ShopSwitcher/index';
+import PageNotScroller from '../components/PageNotScroller';
 
 const store = configureStore();
 const history = syncHistoryWithStore(hashHistory, store);
@@ -33,9 +34,10 @@ const Routes = ({ location, shopId }) =>
       <IndexRoute  component={OnePageSwitcher} />
       <Route path="/brandidea" component={OnePageSwitcher} />
       <Route path="/brandprogress" component={OnePageSwitcher} />
+      <Route path="/contact"  component={PageNotScroller} />
       <Route path="/shops" component={ShopSwitcher} />
       <Route path="/shops/:id"  component={ShopSwitcher} />
-      <Route path="*" component={NotFound}/>
+      <Route path="*" component={PageNotScroller}/>
 
     </Route>
 

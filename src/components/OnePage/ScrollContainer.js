@@ -78,28 +78,28 @@ const ScrollContainer = React.createClass({
   moveTheNumberByPathName(pathname){
     switch (pathname) {
       case "/shops":
-        this.setState({allow: true, active:0});
+        this.setState({allow: false, active:0});
         break;
       case "/shops/1":
-        this.setState({allow: true, active:0});
-        break;
-      case "/shops/2":
         this.setState({allow: true, active:1});
         break;
+      case "/shops/2":
+        this.setState({allow: true, active:2});
+        break;
       case "/shops/3":
-          this.setState({allow: true, active:2});
+          this.setState({allow: true, active:3});
           break;
       case "/shops/4":
-        this.setState({allow: true, active:3});
+        this.setState({allow: true, active:4});
         break;
       case "/shops/5":
-          this.setState({allow: true, active:4});
-          break;
-      case "/shops/6":
           this.setState({allow: true, active:5});
           break;
-      case "/shops/7":
+      case "/shops/6":
           this.setState({allow: true, active:6});
+          break;
+      case "/shops/7":
+          this.setState({allow: true, active:7});
           break;
       case "/brandidea":
           this.setState({allow: false, active:0});
@@ -227,7 +227,7 @@ const ScrollContainer = React.createClass({
         <ul className={styles.onepagePagination}>
           {_.map( _.times(this.props.children.length, Number), (i) => {
             return(
-              <li>
+              <li key={i}>
                 <a className={this.state.active === i ? styles.active : "" }
                    onClick={this.handleLinkClick.bind(this, i)}>
                 </a>

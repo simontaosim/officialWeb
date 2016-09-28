@@ -19,7 +19,9 @@ class MainHeader extends React.Component {
     this.state = {
       titleShow: false,
       page: 0,
-      
+      subtitle: "幸福一生  快乐一世",
+      title: "金莱蒂"
+
     }
   }
   componentDidMount() {
@@ -35,12 +37,59 @@ class MainHeader extends React.Component {
     console.log(state);
   }
 
+  componentWillReceiveProps(nextProps){
+    console.log(nextProps);
+    this.changeHeaderByPathName(nextProps.location.pathname);
+  }
+
+  changeHeaderByPathName(pathname){
+    switch (pathname) {
+      case "/shops":
+        this.setState({title: "成都市门店地图"});
+        break;
+      case "/shops/1":
+        this.setState({title: "草金立交正成广场家乐福店"});
+        break;
+      case "/shops/2":
+        this.setState({title: "簇桥欧尚金大福"});
+        break;
+      case "/shops/3":
+          this.setState({title: "华阳银泰城永辉店"});
+          break;
+      case "/shops/4":
+        this.setState({title: "内江万达永辉店"});
+        break;
+      case "/shops/5":
+          this.setState({title: "武侯祠茂业百货店"});
+          break;
+      case "/shops/6":
+          this.setState({title: "草金立交正成广场家乐福店"});
+          break;
+      case "/shops/7":
+          this.setState({title: "草金立交正成广场家乐福店"});
+          break;
+      case "/brandidea":
+          this.setState({title: "品牌理念"});
+          break;
+      case "/brandprogress":
+          this.setState({title: "品牌历程"});
+          break;
+      case "/contact":
+          this.setState({title: "联系我们"});
+          break;
+      default:
+        this.setState({title: "金莱蒂", subtitle: "幸福一生  快乐一世"});
+        break;
+
+    }
+  }
+
 
   render() {
     let children = React.Children.map(this.props.children, function(){
 
   });
-  console.log(children);
+    const {pathname} = this.props.location.pathname;
     return(
       <div>
 
@@ -75,7 +124,8 @@ class MainHeader extends React.Component {
                         className="code-box-shape"
                         key="a"
                       >
-                          <div key="a"   style={{position: "relative", left: "-1%"}}> <img src="/images/logoC.png" width="250" /></div>
+                          <div key="a" style={{position: "relative", top: "0px", backgroundColor: 'rgba(86,63,46,0.54)'}}>
+                          <h1 id="pageTitle" style={{display: "block", letterSpacing: "20px", fontSize: "xx-large"}}>{this.state.title}</h1></div>
                       </TweenOne>
                       <TweenOne
                           animation={{ blur: '10px', yoyo: true, duration: 500, repeat: 1 }}
@@ -83,9 +133,9 @@ class MainHeader extends React.Component {
                           className="code-box-shape"
                           key="b"
                         >
-                          <div key="b"   style={{position: "relative", left: "-1%", fontSize: "18px"}}>
+                          <div key="b"   style={{position: "relative", left: "-1%", fontSize: "18px", textAlign: "center"}}>
                             <br/>
-                            <p style={{color: "#BDC0BA"}}>幸福一生&nbsp;&nbsp;快乐一世</p>
+                            <span id="pageSubtitle" style={{color: "#FBE251", backgroundColor: 'rgba(86,63,46,0.34)', width: "40%"}}>{this.state.subtitle}</span>
                           </div>
                     </TweenOne>
                       <br/>
@@ -99,7 +149,7 @@ class MainHeader extends React.Component {
       </Media>
       </div>
 
-      <div style={{position: "relative", top: "0", height: "100%"}}>
+      <div style={{height: "100%", width: "100%"}}>
         {this.props.children}
       </div>
 
