@@ -77,6 +77,30 @@ class MainHeader extends React.Component {
       case "/contact":
           this.setState({title: "联系我们"});
           break;
+      case "/fuwutiaokuan":
+          this.setState({title: "服务条款"});
+          break;
+      case "/helpusing":
+          this.setState({title: "网站使用帮助"});
+          break;
+      case "/hunjia":
+          this.setState({title: "婚嫁珠宝"});
+          break;
+      case "/rings":
+          this.setState({title: "戒指"});
+          break;
+      case "/arts":
+          this.setState({title: "金莱蒂手工珠宝的创作和设计"});
+          break;
+      case "/activies":
+          this.setState({title: "品牌活动"});
+          break;
+      case "/aboutus":
+          this.setState({title: "关于我们"});
+          break;
+      case "/maintain":
+          this.setState({title: "保养护理建议"});
+          break;
       default:
         this.setState({title: "金莱蒂", subtitle: "幸福一生  快乐一世"});
         break;
@@ -90,6 +114,7 @@ class MainHeader extends React.Component {
 
   });
     const {pathname} = this.props.location.pathname;
+    console.log(pathname);
     return(
       <div>
 

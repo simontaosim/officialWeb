@@ -35,6 +35,14 @@ const Routes = ({ location, shopId }) =>
       <Route path="/brandidea" component={OnePageSwitcher} />
       <Route path="/brandprogress" component={OnePageSwitcher} />
       <Route path="/contact"  component={PageNotScroller} />
+      <Route path="/fuwutiaokuan"  component={PageNotScroller} />
+      <Route path="/helpusing"  component={PageNotScroller} />
+      <Route path="/hunjia"  component={PageNotScroller} />
+      <Route path="/rings"  component={PageNotScroller} />
+      <Route path="/arts"  component={PageNotScroller} />
+      <Route path="/activies"  component={PageNotScroller} />
+      <Route path="/aboutus"  component={PageNotScroller} />
+      <Route path="/maintain"  component={PageNotScroller} />
       <Route path="/shops" component={ShopSwitcher} />
       <Route path="/shops/:id"  component={ShopSwitcher} />
       <Route path="*" component={PageNotScroller}/>

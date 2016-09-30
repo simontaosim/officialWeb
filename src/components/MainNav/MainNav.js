@@ -227,33 +227,44 @@ class MainNav extends React.Component {
                         <img src="/images/logoP.png" style={{width:"130px", position: "relative", top: "-10px", right: "8px"}} />
                     </a>
                     </li>
-                    <li><a href="#">婚尚臻品</a>
-                        <ul  style={{color: "white"}}>
+                    <li><a href="/#/hunjia">婚尚臻品</a>
+                        <ul  style={{color: "white", height: "400px"}}>
                             <li>
                                 <ul>
-                                    <li><a href="#">婚嫁珠宝</a></li>
-                                    <li><a href="#">戒指</a></li>
-                                    <li><a href="#">定制</a></li>
+                                    <li><a href="/#/hunjia">婚嫁珠宝</a></li>
+                                    <li><a href="/#/rings">戒指</a></li>
+                                    <li><a href="/#/arts">定制</a></li>
 
                                 </ul>
                             </li>
-                            <li style={{position:"relative", top: "20px", width: "33%"}}>
-                              <div  style={{float:"left", padding: "10px"}}>
+                            <li style={{position:"relative", top: "20px", width: "33%", borderRight:"inset white 1px", borderLeft:"inset white 1px", height: "270px", marginBottom: "20px",marginRight: "5px"}}>
+                              <div  style={{float:"left", padding: "10px", marginRight: "-5px"}}>
                                   <h2>婚嫁珠宝</h2>
                                   <hr/>
-                                  <p>罗里吧嗦，balala</p>
+                                  <p style={{wordBreak: "break-all", width: "200px"}}>金莱蒂甄选优质的、G级以上颜色的钻石，净度至少为VS级，即内含物仅限于为肉眼不可见范围。
+
+金莱蒂宝石专家精心挑选每一颗钻石， 以国际公认的4C标准（切割、颜色、重量、净度）来甄别金莱蒂钻石品质， 所挑选的钻石仅限于D、E、F、G四个最高颜色级别、以及IF—VS2的高净度级别。 此外，金莱蒂精湛的切割工艺也为每颗钻石添亮增辉。
+
+如同每个佩戴者一样，每颗钻石都是独一无二的，作为婚庆戒指主石的钻石，每颗0.20克拉以上的金莱蒂钻石都具备有GIA认证证书（美国宝石学院证书）。
+</p>
                               </div>
 
-                              <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                              <a href="/#/hunjia" style={{borderBottom: "none", textAlign:"center", position:"relative", right: "-5px",top: "0px", width:"32%", float:"left", padding: "10px", display: "block"}}>
+                              <img src="/images/marry.jpeg" style={{width:"170px", float:"left", padding: "10px"}} /></a>
                             </li>
                             <li style={{position:"relative", top: "20px", width: "33%"}}>
-                              <div  style={{float:"left", padding: "10px", color: "white"}}>
+                              <div  style={{float:"left", padding: "10px", color: "white", marginRight: "20px"}}>
                                   <h2>定制</h2>
                                   <hr/>
-                                  <p>罗里吧嗦，balala</p>
+                                  <p style={{wordBreak: "break-all", width: "200px"}}>金莱蒂为你提供一个化梦想为现实的机会：
+                                  打造真正属于你的订婚戒指。从无数的组合中挑选，无论是戒托，克拉，颜色或是纯度，
+                                  从而创造出一枚独一无二的单钻戒指。King Lai Di Jewelry钻石，全部都符合“Conflict-free”标准，
+                                  尊重联合国组织关于宝石来源的相关决议，遵循金伯利进程而且全都具备证书无数种组合搭配只为制造一枚永恒的，
+                                  经典而又精致，大小完美的单钻戒指。一件属于一辈子的首饰。金莱蒂单钻。Heart-made. By you.</p>
                               </div>
 
-                              <img src="/images/default.jpg" style={{width:"130px", float:"left"}} />
+                              <a href="/#/arts" style={{borderBottom: "none", textAlign:"center", position:"relative", right: "-10px",top: "0px", width:"32%", float:"left", padding: "10px", display: "block"}}>
+                              <img src="/images/cust.jpeg" style={{width:"170px", float:"left", padding: "10px"}} /></a>
                             </li>
                         </ul>
                     </li>
@@ -280,7 +291,7 @@ class MainNav extends React.Component {
 
                           </ul>
                       </li>
-                      <li><a href="#">品牌活动</a></li>
+                      <li><a href="/#/activies">品牌活动</a></li>
 
                       <Media query="(max-width: 959px)">
                         {matches => matches ? (
